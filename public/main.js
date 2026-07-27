@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const progressBarFill = carousel.querySelector('#carousel-progress');
         
         let currentSlide = 0;
-        const slideDuration = 6000; // 6 seconds per slide
+        const slideDuration = 2000; // 2 seconds per slide
         let lastTime = 0;
         let progress = 0;
         let animationFrameId = null;
