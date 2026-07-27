@@ -56,176 +56,271 @@
 
     <!-- Main Container -->
     <main class="container">
-        <div class="enrollment-card">
-            <div class="card-header">
-                <h2>Join the Legacy</h2>
-                <h1>SHIVGANDHA DHOL TASHA PATHAK</h1>
-                <p>Register yourself to be a part of Maharashtra's grandest traditional musical troupe. Feel the energy, drum the beats!</p>
+        <div class="homepage-layout">
+            <!-- Left Column: Carousel -->
+            <div class="carousel-section">
+                <div class="hero-carousel" id="homepage-carousel">
+                    <!-- Carousel Slides -->
+                    <div class="carousel-slides">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide active">
+                            <img src="images/carousel-1.png" alt="Shivgandha Dhol Player">
+                            <div class="slide-overlay">
+                                <div class="slide-content">
+                                    <span class="slide-tag"><i class="fa-solid fa-fire"></i> Saffron Energy</span>
+                                    <h3>Feel the Energy</h3>
+                                    <p>Experience the thunderous beats of dhol and tasha echoing Maharashtra's glorious tradition and pride.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <img src="images/carousel-2.png" alt="Shivgandha Tasha Player">
+                            <div class="slide-overlay">
+                                <div class="slide-content">
+                                    <span class="slide-tag"><i class="fa-solid fa-drum"></i> Rhythmic Beats</span>
+                                    <h3>Rhythms of Shivgandha</h3>
+                                    <p>Devoted to heritage and rhythmic synchronization that ignites the heart and soul of the crowd.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <img src="images/carousel-3.png" alt="Shivgandha Troupe Member">
+                            <div class="slide-overlay">
+                                <div class="slide-content">
+                                    <span class="slide-tag"><i class="fa-solid fa-award"></i> Cultural Legacy</span>
+                                    <h3>Join the Brotherhood</h3>
+                                    <p>Become part of a tight-knit family of traditional musicians, learning and performing at grand stages.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="carousel-slide">
+                            <img src="images/carousel-4.png" alt="Shivgandha Narayanakar Dhol">
+                            <div class="slide-overlay">
+                                <div class="slide-content">
+                                    <span class="slide-tag"><i class="fa-solid fa-meteor"></i> Power of Beats</span>
+                                    <h3>Drum with Passion</h3>
+                                    <p>Unleash your passion, master the beats of standard talas, and play with absolute synchronization.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div class="carousel-slide">
+                            <img src="images/carousel-5.png" alt="Shivgandha Women Dhol Pathak">
+                            <div class="slide-overlay">
+                                <div class="slide-content">
+                                    <span class="slide-tag"><i class="fa-solid fa-users"></i> Unity & Pride</span>
+                                    <h3>Together in Rhythm</h3>
+                                    <p>Celebrating Maharashtrian cultural heritage together as one massive, passionate family.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Controls -->
+                    <button type="button" class="carousel-control prev" aria-label="Previous Slide">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button type="button" class="carousel-control next" aria-label="Next Slide">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Autoplay Progress Indicator -->
+                    <div class="carousel-progress-bar">
+                        <div class="carousel-progress-fill" id="carousel-progress"></div>
+                    </div>
+
+                    <!-- Slide Bullet Indicators -->
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                        <span class="indicator" data-slide="3"></span>
+                        <span class="indicator" data-slide="4"></span>
+                    </div>
+                </div>
             </div>
 
-            <!-- Form -->
-            <form id="enrollment-form" novalidate>
-                <!-- Name Input -->
-                <div class="input-group">
-                    <label for="name"><i class="fa-solid fa-user"></i> Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" required autocomplete="off">
-                    <span class="error-msg" id="name-error">Please enter your name</span>
-                </div>
-
-                <!-- WhatsApp Contact Input -->
-                <div class="input-group">
-                    <label for="contact"><i class="fa-brands fa-whatsapp"></i> WhatsApp Number</label>
-                    <input type="tel" id="contact" name="contact" placeholder="Enter 10-digit number" required autocomplete="off" maxlength="10">
-                    <span class="error-msg" id="contact-error">Please enter a valid 10-digit WhatsApp number</span>
-                </div>
-
-                <!-- Age & Gender Row -->
-                <div class="form-row">
-                    <!-- Age Input -->
-                    <div class="input-group age-group">
-                        <label for="age"><i class="fa-solid fa-calendar-days"></i> Age</label>
-                        <input type="number" id="age" name="age" min="10" max="80" placeholder="Age" required>
-                        <span class="error-msg" id="age-error">Age (10 - 80)</span>
+            <!-- Right Column: Enrollment Form -->
+            <div class="form-section">
+                <div class="enrollment-card">
+                    <div class="card-header">
+                        <h2>Join the Legacy</h2>
+                        <h1>SHIVGANDHA DHOL TASHA PATHAK</h1>
+                        <p>Register yourself to be a part of Maharashtra's grandest traditional musical troupe. Feel the energy, drum the beats!</p>
                     </div>
 
-                    <!-- Gender Selection -->
-                    <div class="input-group gender-group">
-                        <label><i class="fa-solid fa-venus-mars"></i> Gender</label>
-                        <div class="gender-options">
-                            <label class="gender-radio">
-                                <input type="radio" name="gender" value="Male" required checked>
-                                <span class="radio-btn">Male</span>
-                            </label>
-                            <label class="gender-radio">
-                                <input type="radio" name="gender" value="Female">
-                                <span class="radio-btn">Female</span>
-                            </label>
+                    <!-- Form -->
+                    <form id="enrollment-form" novalidate>
+                        <!-- Name Input -->
+                        <div class="input-group">
+                            <label for="name"><i class="fa-solid fa-user"></i> Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required autocomplete="off">
+                            <span class="error-msg" id="name-error">Please enter your name</span>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Parent's Number & Blood Group Row -->
-                <div class="form-row">
-                    <!-- Parent Number Input -->
-                    <div class="input-group parent-group">
-                        <label for="parent-contact"><i class="fa-solid fa-phone"></i> Parent's Number</label>
-                        <input type="tel" id="parent-contact" name="parentContact" placeholder="Enter 10-digit number" required autocomplete="off" maxlength="10">
-                        <span class="error-msg" id="parent-contact-error">Please enter a valid 10-digit number</span>
-                    </div>
+                        <!-- WhatsApp Contact Input -->
+                        <div class="input-group">
+                            <label for="contact"><i class="fa-brands fa-whatsapp"></i> WhatsApp Number</label>
+                            <input type="tel" id="contact" name="contact" placeholder="Enter 10-digit number" required autocomplete="off" maxlength="10">
+                            <span class="error-msg" id="contact-error">Please enter a valid 10-digit WhatsApp number</span>
+                        </div>
 
-                    <!-- Blood Group Dropdown -->
-                    <div class="input-group blood-group">
-                        <label for="blood-group"><i class="fa-solid fa-droplet"></i> Blood Group</label>
-                        <select id="blood-group" name="bloodGroup" required>
-                            <option value="" disabled selected>Select</option>
-                            <option value="A+">A+</option>
-                            <option value="A-">A-</option>
-                            <option value="B+">B+</option>
-                            <option value="B-">B-</option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
-                            <option value="O+">O+</option>
-                            <option value="O-">O-</option>
-                        </select>
-                        <span class="error-msg" id="blood-group-error">Please select blood group</span>
-                    </div>
-                </div>
+                        <!-- Age & Gender Row -->
+                        <div class="form-row">
+                            <!-- Age Input -->
+                            <div class="input-group age-group">
+                                <label for="age"><i class="fa-solid fa-calendar-days"></i> Age</label>
+                                <input type="number" id="age" name="age" min="10" max="80" placeholder="Age" required>
+                                <span class="error-msg" id="age-error">Age (10 - 80)</span>
+                            </div>
 
-                <!-- Instrument Selection with Photos -->
-                <div class="input-group">
-                    <label><i class="fa-solid fa-drum"></i> Choose Instrument</label>
-                    <div class="instrument-selector-grid">
-                        <label class="instrument-card-option">
-                            <input type="radio" name="instrument" value="Dhol" required>
-                            <div class="instrument-card-content">
-                                <div class="instrument-image-container">
-                                    <img src="images/dhol.jpg" alt="Dhol Player">
+                            <!-- Gender Selection -->
+                            <div class="input-group gender-group">
+                                <label><i class="fa-solid fa-venus-mars"></i> Gender</label>
+                                <div class="gender-options">
+                                    <label class="gender-radio">
+                                        <input type="radio" name="gender" value="Male" required checked>
+                                        <span class="radio-btn">Male</span>
+                                    </label>
+                                    <label class="gender-radio">
+                                        <input type="radio" name="gender" value="Female">
+                                        <span class="radio-btn">Female</span>
+                                    </label>
                                 </div>
-                                <div class="instrument-info">
-                                    <span class="instrument-title">Dhol</span>
-                                </div>
-                                <div class="checked-badge"><i class="fa-solid fa-circle-check"></i></div>
-                            </div>
-                        </label>
-                        <label class="instrument-card-option">
-                            <input type="radio" name="instrument" value="Tasha" required>
-                            <div class="instrument-card-content">
-                                <div class="instrument-image-container">
-                                    <img src="images/tasha.jpg" alt="Tasha Player">
-                                </div>
-                                <div class="instrument-info">
-                                    <span class="instrument-title">Tasha</span>
-                                </div>
-                                <div class="checked-badge"><i class="fa-solid fa-circle-check"></i></div>
-                            </div>
-                        </label>
-                        <label class="instrument-card-option">
-                            <input type="radio" name="instrument" value="Dhwajdhari" required>
-                            <div class="instrument-card-content">
-                                <div class="instrument-image-container">
-                                    <img src="images/dhwajdhari.jpg" alt="Dhwajdhari Player">
-                                </div>
-                                <div class="instrument-info">
-                                    <span class="instrument-title">Dhwajdhari</span>
-                                </div>
-                                <div class="checked-badge"><i class="fa-solid fa-circle-check"></i></div>
-                            </div>
-                        </label>
-                    </div>
-                    <span class="error-msg" id="instrument-error">Please select an instrument</span>
-                </div>
-
-                <!-- Live Identity Verification (Camera) -->
-                <div class="input-group camera-verification-group" id="camera-section">
-                    <label><i class="fa-solid fa-camera"></i> Live Identity Verification</label>
-                    <p class="camera-info-text">Tap the frame below to capture your photo. Tap again to retake.</p>
-                    
-                    <div class="camera-widget-container">
-                        <!-- Unified Interactive Frame -->
-                        <div class="video-preview-wrapper active" id="camera-container-box" style="cursor: pointer; width: 100%; max-width: 320px; height: 240px; border-radius: 12px; border: 2px solid var(--border-color); overflow: hidden; position: relative; background: #000; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 15px var(--saffron-glow);">
-                            <!-- Live Video Stream -->
-                            <video id="camera-stream" autoplay playsinline muted style="width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); display: block;"></video>
-                            
-                            <!-- Captured Image overlay (hidden initially) -->
-                            <img id="captured-photo" alt="Captured Identity Preview" style="width: 100%; height: 100%; object-fit: cover; display: none; position: absolute; top: 0; left: 0; z-index: 15;">
-                            
-                            <!-- Scanner guide overlay -->
-                            <div class="scanner-guide" id="scanner-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; display: flex; justify-content: center; align-items: center; z-index: 10;">
-                                <div class="scan-frame"></div>
-                                <div class="scan-laser"></div>
-                            </div>
-                            
-                            <!-- Floating Status Badge -->
-                            <div class="captured-badge-label" id="camera-status-badge" style="position: absolute; bottom: 12px; right: 12px; z-index: 20; background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(4px); border: 1px solid var(--gold-glow); color: var(--gold); padding: 0.35rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 0.35rem; pointer-events: none; transition: all 0.3s ease;">
-                                <i class="fa-solid fa-hand-pointer"></i> Tap to Capture
                             </div>
                         </div>
 
-                        <!-- Hidden canvas for capturing frame -->
-                        <canvas id="capture-canvas" style="display: none;"></canvas>
-                    </div>
-                    
-                    <!-- Hidden input to store image data URL -->
-                    <input type="hidden" id="photo-data" name="photo" required>
-                    <span class="error-msg" id="photo-error">Identity verification photo is required</span>
-                </div>
+                        <!-- Parent's Number & Blood Group Row -->
+                        <div class="form-row">
+                            <!-- Parent Number Input -->
+                            <div class="input-group parent-group">
+                                <label for="parent-contact"><i class="fa-solid fa-phone"></i> Parent's Number</label>
+                                <input type="tel" id="parent-contact" name="parentContact" placeholder="Enter 10-digit number" required autocomplete="off" maxlength="10">
+                                <span class="error-msg" id="parent-contact-error">Please enter a valid 10-digit number</span>
+                            </div>
 
-                <!-- Terms and Conditions -->
-                <div class="input-group terms-group">
-                    <label class="checkbox-container">
-                        <input type="checkbox" id="terms" name="terms" required>
-                        <span class="checkmark"></span>
-                        <span class="terms-text">I agree to attend practice sessions regularly and respect troupe rules and regulations.</span>
-                    </label>
-                    <span class="error-msg" id="terms-error">You must accept the terms to enroll</span>
-                </div>
+                            <!-- Blood Group Dropdown -->
+                            <div class="input-group blood-group">
+                                <label for="blood-group"><i class="fa-solid fa-droplet"></i> Blood Group</label>
+                                <select id="blood-group" name="bloodGroup" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                                <span class="error-msg" id="blood-group-error">Please select blood group</span>
+                            </div>
+                        </div>
 
-                <!-- Submit Button -->
-                <button type="submit" class="submit-btn" id="submit-btn">
-                    <span>Send Application</span>
-                    <i class="fa-solid fa-paper-plane"></i>
-                </button>
-            </form>
+                        <!-- Instrument Selection with Photos -->
+                        <div class="input-group">
+                            <label><i class="fa-solid fa-drum"></i> Choose Instrument</label>
+                            <div class="instrument-selector-grid">
+                                <label class="instrument-card-option">
+                                    <input type="radio" name="instrument" value="Dhol" required>
+                                    <div class="instrument-card-content">
+                                        <div class="instrument-image-container">
+                                            <img src="images/dhol.jpg" alt="Dhol Player">
+                                        </div>
+                                        <div class="instrument-info">
+                                            <span class="instrument-title">Dhol</span>
+                                        </div>
+                                        <div class="checked-badge"><i class="fa-solid fa-circle-check"></i></div>
+                                    </div>
+                                </label>
+                                <label class="instrument-card-option">
+                                    <input type="radio" name="instrument" value="Tasha" required>
+                                    <div class="instrument-card-content">
+                                        <div class="instrument-image-container">
+                                            <img src="images/tasha.jpg" alt="Tasha Player">
+                                        </div>
+                                        <div class="instrument-info">
+                                            <span class="instrument-title">Tasha</span>
+                                        </div>
+                                        <div class="checked-badge"><i class="fa-solid fa-circle-check"></i></div>
+                                    </div>
+                                </label>
+                                <label class="instrument-card-option">
+                                    <input type="radio" name="instrument" value="Dhwajdhari" required>
+                                    <div class="instrument-card-content">
+                                        <div class="instrument-image-container">
+                                            <img src="images/dhwajdhari.jpg" alt="Dhwajdhari Player">
+                                        </div>
+                                        <div class="instrument-info">
+                                            <span class="instrument-title">Dhwajdhari</span>
+                                        </div>
+                                        <div class="checked-badge"><i class="fa-solid fa-circle-check"></i></div>
+                                    </div>
+                                </label>
+                            </div>
+                            <span class="error-msg" id="instrument-error">Please select an instrument</span>
+                        </div>
+
+                        <!-- Live Identity Verification (Camera) -->
+                        <div class="input-group camera-verification-group" id="camera-section">
+                            <label><i class="fa-solid fa-camera"></i> Live Identity Verification</label>
+                            <p class="camera-info-text">Tap the frame below to capture your photo. Tap again to retake.</p>
+                            
+                            <div class="camera-widget-container">
+                                <!-- Unified Interactive Frame -->
+                                <div class="video-preview-wrapper active" id="camera-container-box" style="cursor: pointer; width: 100%; max-width: 320px; height: 240px; border-radius: 12px; border: 2px solid var(--border-color); overflow: hidden; position: relative; background: #000; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 15px var(--saffron-glow);">
+                                    <!-- Live Video Stream -->
+                                    <video id="camera-stream" autoplay playsinline muted style="width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); display: block;"></video>
+                                    
+                                    <!-- Captured Image overlay (hidden initially) -->
+                                    <img id="captured-photo" alt="Captured Identity Preview" style="width: 100%; height: 100%; object-fit: cover; display: none; position: absolute; top: 0; left: 0; z-index: 15;">
+                                    
+                                    <!-- Scanner guide overlay -->
+                                    <div class="scanner-guide" id="scanner-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; display: flex; justify-content: center; align-items: center; z-index: 10;">
+                                        <div class="scan-frame"></div>
+                                        <div class="scan-laser"></div>
+                                    </div>
+                                    
+                                    <!-- Floating Status Badge -->
+                                    <div class="captured-badge-label" id="camera-status-badge" style="position: absolute; bottom: 12px; right: 12px; z-index: 20; background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(4px); border: 1px solid var(--gold-glow); color: var(--gold); padding: 0.35rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 0.35rem; pointer-events: none; transition: all 0.3s ease;">
+                                        <i class="fa-solid fa-hand-pointer"></i> Tap to Capture
+                                    </div>
+                                </div>
+
+                                <!-- Hidden canvas for capturing frame -->
+                                <canvas id="capture-canvas" style="display: none;"></canvas>
+                            </div>
+                            
+                            <!-- Hidden input to store image data URL -->
+                            <input type="hidden" id="photo-data" name="photo" required>
+                            <span class="error-msg" id="photo-error">Identity verification photo is required</span>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="input-group terms-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkmark"></span>
+                                <span class="terms-text">I agree to attend practice sessions regularly and respect troupe rules and regulations.</span>
+                            </label>
+                            <span class="error-msg" id="terms-error">You must accept the terms to enroll</span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-btn" id="submit-btn">
+                            <span>Send Application</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
 

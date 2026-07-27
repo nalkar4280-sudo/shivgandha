@@ -423,4 +423,94 @@ document.addEventListener('DOMContentLoaded', () => {
             successModal.classList.remove('active');
         }
     });
+
+    // ==========================================================================
+    // Interactive Homepage Carousel
+    // ==========================================================================
+    const carousel = document.getElementById('homepage-carousel');
+    if (carousel) {
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const indicators = carousel.querySelectorAll('.indicator');
+        const prevBtn = carousel.querySelector('.carousel-control.prev');
+        const nextBtn = carousel.querySelector('.carousel-control.next');
+        const progressBarFill = carousel.querySelector('#carousel-progress');
+        
+        let currentSlide = 0;
+        const slideDuration = 6000; // 6 seconds per slide
+        let lastTime = 0;
+        let progress = 0;
+        let animationFrameId = null;
+        let isHovered = false;
+
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            indicators[currentSlide].classList.remove('active');
+            
+            currentSlide = (index + slides.length) % slides.length;
+            
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+            
+            progress = 0;
+            if (progressBarFill) {
+                progressBarFill.style.width = '0%';
+            }
+        }
+
+        function animateProgress(timestamp) {
+            if (!lastTime) lastTime = timestamp;
+            const delta = timestamp - lastTime;
+            lastTime = timestamp;
+
+            if (!isHovered) {
+                progress += (delta / slideDuration) * 100;
+                if (progress >= 100) {
+                    progress = 0;
+                    showSlide(currentSlide + 1);
+                }
+                if (progressBarFill) {
+                    progressBarFill.style.width = `${progress}%`;
+                }
+            }
+            animationFrameId = requestAnimationFrame(animateProgress);
+        }
+
+        function resetTimer() {
+            progress = 0;
+            if (progressBarFill) {
+                progressBarFill.style.width = '0%';
+            }
+            lastTime = 0;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            showSlide(currentSlide - 1);
+            resetTimer();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            showSlide(currentSlide + 1);
+            resetTimer();
+        });
+
+        indicators.forEach((indicator) => {
+            indicator.addEventListener('click', (e) => {
+                const targetSlideIndex = parseInt(e.target.getAttribute('data-slide'), 10);
+                showSlide(targetSlideIndex);
+                resetTimer();
+            });
+        });
+
+        carousel.addEventListener('mouseenter', () => {
+            isHovered = true;
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            isHovered = false;
+            lastTime = 0; // reset delta calculations
+        });
+
+        // Initialize progress bar
+        animationFrameId = requestAnimationFrame(animateProgress);
+    }
 });
