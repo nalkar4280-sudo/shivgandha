@@ -1,18 +1,18 @@
 /* Troupe Admin Palette Variables */
 :root {
-    --bg-dark: #0a0a0c;
-    --card-bg: rgba(22, 22, 26, 0.7);
-    --border-color: rgba(255, 255, 255, 0.08);
-    --text-primary: #f5f5f7;
-    --text-secondary: #9a9a9f;
+    --bg-dark: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: rgba(0, 0, 0, 0.08);
+    --text-primary: #18181b;
+    --text-secondary: #52525b;
     
     --saffron: #ff6f00;
     --saffron-glow: rgba(255, 111, 0, 0.2);
-    --gold: #ffaa00;
-    --gold-glow: rgba(255, 170, 0, 0.1);
+    --gold: #e69900;
+    --gold-glow: rgba(230, 153, 0, 0.1);
     
-    --success-green: #30d158;
-    --error-red: #ff453a;
+    --success-green: #24b24b;
+    --error-red: #e53935;
     
     --font-primary: 'Outfit', sans-serif;
     --font-heading: 'Marcellus', serif;
@@ -45,7 +45,7 @@ body {
     filter: blur(140px);
     pointer-events: none;
     z-index: 0;
-    opacity: 0.35;
+    opacity: 0.18;
 }
 
 .orange-glow {
@@ -62,7 +62,7 @@ body {
 
 /* Navigation */
 nav {
-    background: rgba(10, 10, 12, 0.85);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
@@ -107,7 +107,7 @@ nav {
 .home-link {
     text-decoration: none;
     color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.04);
     padding: 0.5rem 1.2rem;
     border-radius: 50px;
     border: 1px solid var(--border-color);
@@ -199,7 +199,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
 .stat-icon-wrapper {
@@ -262,8 +262,8 @@ nav {
 }
 
 .search-box input {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border-color);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
     color: var(--text-primary);
     border-radius: 10px;
     padding: 0.75rem 1.2rem 0.75rem 2.8rem;
@@ -276,7 +276,7 @@ nav {
 .search-box input:focus {
     border-color: var(--saffron);
     box-shadow: 0 0 0 3px var(--saffron-glow);
-    background: rgba(255, 255, 255, 0.07);
+    background: #ffffff;
 }
 
 .filters-row {
@@ -298,8 +298,8 @@ nav {
 }
 
 .filter-group select {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border-color);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
     color: var(--text-primary);
     border-radius: 10px;
     padding: 0.6rem 2rem 0.6rem 1rem;
@@ -308,7 +308,7 @@ nav {
     cursor: pointer;
     transition: all 0.3s ease;
     appearance: none;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a1a1a6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2352525b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
     background-repeat: no-repeat;
     background-position: right 0.75rem center;
     background-size: 1rem;
@@ -325,7 +325,7 @@ nav {
     border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: 1.8rem;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
 }
 
 .card-title {
@@ -341,7 +341,7 @@ nav {
 }
 
 .badge {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.04);
     color: var(--text-secondary);
     padding: 0.3rem 0.75rem;
     border-radius: 50px;
@@ -364,7 +364,7 @@ table {
 
 th, td {
     padding: 1rem 1.25rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 th {
@@ -381,7 +381,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: rgba(0, 0, 0, 0.02);
 }
 
 /* Row elements */
@@ -465,7 +465,7 @@ tbody tr:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(8, 8, 10, 0.85);
+    background: rgba(255, 255, 255, 0.82);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 1000;
@@ -483,14 +483,14 @@ tbody tr:hover {
 }
 
 .confirm-card {
-    background: rgba(30, 30, 35, 0.95);
+    background: #ffffff;
     border: 1px solid var(--border-color);
     border-radius: 20px;
     max-width: 400px;
     width: 90%;
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
     transform: scale(0.9);
     transition: transform 0.3s ease;
 }
@@ -541,13 +541,13 @@ tbody tr:hover {
 }
 
 .confirm-btn.cancel {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.04);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
 }
 
 .confirm-btn.cancel:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.08);
 }
 
 .confirm-btn.delete {
@@ -565,9 +565,9 @@ tbody tr:hover {
 footer {
     text-align: center;
     padding: 2rem;
-    color: rgba(255, 255, 255, 0.15);
+    color: var(--text-secondary);
     font-size: 0.8rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
     margin-top: auto;
     z-index: 10;
 }
@@ -616,7 +616,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(8, 8, 10, 0.85);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     z-index: 2000;
@@ -640,7 +640,7 @@ footer {
     width: 90%;
     max-width: 440px;
     padding: 3rem 2.5rem;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -704,8 +704,8 @@ footer {
 }
 
 .password-wrapper input {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border-color);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 12px;
     padding: 0.85rem 3rem 0.85rem 1.2rem;
     color: var(--text-primary);
@@ -716,7 +716,7 @@ footer {
 }
 
 .password-wrapper input:focus {
-    background: rgba(255, 255, 255, 0.07);
+    background: #ffffff;
     border-color: var(--saffron);
     box-shadow: 0 0 0 4px var(--saffron-glow);
 }
@@ -997,15 +997,15 @@ footer {
 }
 
 .id-control-btn.close-btn {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.04);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
 }
 
 .id-control-btn.close-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.08);
     color: var(--error-red);
-    border-color: rgba(255, 69, 58, 0.3);
+    border-color: rgba(229, 57, 53, 0.3);
 }
 
 .id-control-btn.download-btn {
@@ -1024,15 +1024,15 @@ footer {
 
 /* ID Card Base Styling */
 .id-card {
-    background: linear-gradient(135deg, rgba(20, 20, 25, 0.95), rgba(10, 10, 12, 0.98));
-    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     width: 100%;
     height: 520px;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 25px var(--saffron-glow);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12), 0 0 25px var(--saffron-glow);
     position: relative;
     overflow: hidden;
 }
@@ -1196,7 +1196,7 @@ footer {
 
 /* Card Footer */
 .id-card-footer {
-    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    border-top: 1px dashed rgba(0, 0, 0, 0.12);
     padding-top: 0.85rem;
     margin-top: auto;
     display: flex;
@@ -1214,13 +1214,13 @@ footer {
     height: 24px;
     width: 175px;
     background: repeating-linear-gradient(90deg, 
-        #fff, #fff 1.5px, 
-        #000 1.5px, #000 3px, 
-        #fff 3px, #fff 4.5px, 
-        #000 4.5px, #000 6.5px, 
-        #fff 6.5px, #fff 7.5px, 
-        #000 7.5px, #000 9px);
-    filter: invert(0.9); /* White stripes on dark background */
+        #000, #000 1.5px, 
+        #fff 1.5px, #fff 3px, 
+        #000 3px, #000 4.5px, 
+        #fff 4.5px, #fff 6.5px, 
+        #000 6.5px, #000 7.5px, 
+        #fff 7.5px, #fff 9px);
+    filter: invert(0);
     border-radius: 2px;
 }
 
