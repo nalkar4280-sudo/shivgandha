@@ -114,7 +114,15 @@ nav {
     text-shadow: 0 0 30px rgba(255, 111, 0, 0.2);
 }
 
-.admin-link {
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.admin-link, .intro-link {
     text-decoration: none;
     color: var(--text-primary);
     background: rgba(0, 0, 0, 0.04);
@@ -129,12 +137,14 @@ nav {
     gap: 0.5rem;
 }
 
-.admin-link:hover {
+.admin-link:hover, .intro-link:hover {
     background: var(--saffron);
+    color: #ffffff;
     border-color: var(--saffron);
     box-shadow: 0 4px 15px var(--saffron-glow);
     transform: translateY(-2px);
 }
+
 
 /* Main Container & Card */
 .container {

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivagandha Dhol Tasha Pathak - Intro</title>
+  
+  <!-- PWA & Favicon -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#040201">
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #040201;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Yatra One', system-ui, sans-serif;
+      color: #ffffff;
+      opacity: 1;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    body.fade-out {
+      opacity: 0;
+    }
+
+    /* Ambient background fire glow */
+    .bg-glow {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at center, rgba(145, 52, 0, 0.45) 0%, rgba(0, 0, 0, 0.95) 75%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Canvas for anti-gravity upward floating embers */
+    #embers-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Central content showcase */
+    .promo-stage {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      perspective: 1000px;
+      max-width: 90vw;
+    }
+
+    /* Glowing Marathi Tagline */
+    .tagline {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: 3px;
+      background: linear-gradient(180deg, #fff7c2 0%, #ffae19 50%, #9e5b00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 15px rgba(255, 140, 0, 0.8)) drop-shadow(0 0 35px rgba(255, 60, 0, 0.4));
+      opacity: 0;
+      transform: translateY(25px) scale(0.96);
+      animation: revealText 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+      margin-bottom: 20px;
+      user-select: none;
+    }
+
+    /* Anti-gravity Floating Container for Logo */
+    .logo-wrapper {
+      position: relative;
+      opacity: 0;
+      transform: scale(0.85);
+      animation: 
+        revealLogo 2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards,
+        antiGravityFloat 4s ease-in-out 2.2s infinite alternate;
+      cursor: pointer;
+    }
+
+    .logo-wrapper img {
+      width: clamp(280px, 55vw, 700px);
+      max-height: 55vh;
+      object-fit: contain;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 0 35px rgba(255, 115, 0, 0.55));
+    }
+
+    /* Golden sweep beam passing across the logo */
+    .light-sweep {
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 80%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 225, 130, 0.25) 50%,
+        transparent 100%
+      );
+      transform: skewX(-25deg);
+      pointer-events: none;
+      animation: sweepLight 3.5s 2.5s infinite ease-in-out;
+    }
+
+    /* Enter / Redirect Action Button */
+    .enter-btn {
+      margin-top: 35px;
+      padding: 12px 32px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #fff;
+      background: linear-gradient(135deg, #ff6f00, #e69900);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 111, 0, 0.5);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: revealBtn 1s ease-out 2.2s forwards;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .enter-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 140, 0, 0.8);
+      background: linear-gradient(135deg, #ff8000, #ffb300);
+    }
+
+    .enter-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      transition: transform 0.3s ease;
+    }
+
+    .enter-btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* Keyframes */
+    @keyframes revealLogo {
+      0% {
+        opacity: 0;
+        transform: scale(0.85) translateY(40px);
+        filter: blur(10px) brightness(2);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0px) brightness(1);
+      }
+    }
+
+    @keyframes revealText {
+      0% {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes revealBtn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes antiGravityFloat {
+      0% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-12px) rotate(0.4deg);
+      }
+      100% {
+        transform: translateY(6px) rotate(-0.4deg);
+      }
+    }
+
+    @keyframes sweepLight {
+      0% { left: -150%; }
+      40%, 100% { left: 150%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow"></div>
+  <canvas id="embers-canvas"></canvas>
+
+  <main class="promo-stage">
+    <div class="tagline">एकच छंद शिवगंध</div>
+    
+    <div class="logo-wrapper" id="logo-trigger">
+      <img id="intro-logo" src="images/logo.png" alt="शिवगंध" onerror="this.src='shivgandha-logo.png'" />
+      <div class="light-sweep"></div>
+    </div>
+
+    <button class="enter-btn" id="enter-site-btn">
+      <span>मुख्य पानावर जा</span>
+      <svg viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </main>
+
+  <script>
+    // Navigation Redirect with Smooth Fade Out
+    let navigating = false;
+    function navigateToMain() {
+      if (navigating) return;
+      navigating = true;
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 700);
+    }
+
+    document.getElementById('enter-site-btn').addEventListener('click', navigateToMain);
+    document.getElementById('logo-trigger').addEventListener('click', navigateToMain);
+
+    // Auto redirect after full intro reveal animation (5.5 seconds)
+    const autoRedirectTimer = setTimeout(() => {
+      navigateToMain();
+    }, 5500);
+
+    // Programmatic transparency for logo image if needed
+    const logoImg = document.getElementById('intro-logo');
+    if (logoImg) {
+      const tempImg = new Image();
+      tempImg.crossOrigin = "Anonymous";
+      tempImg.src = logoImg.src;
+      tempImg.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = tempImg.width;
+        canvas.height = tempImg.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(tempImg, 0, 0);
+        try {
+          const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          const data = imgData.data;
+          let modified = false;
+          for (let i = 0; i < data.length; i += 4) {
+            if (data[i] < 30 && data[i+1] < 30 && data[i+2] < 30) {
+              data[i+3] = 0;
+              modified = true;
+            }
+          }
+          if (modified) {
+            ctx.putImageData(imgData, 0, 0);
+            logoImg.src = canvas.toDataURL();
+          }
+        } catch (e) {
+          console.log("Logo transparency processing skipped:", e);
+        }
+      };
+    }
+
+    // Anti-gravity rising sparks & embers simulation
+    const canvas = document.getElementById('embers-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let width, height;
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    class EmberParticle {
+      constructor() {
+        this.reset(true);
+      }
+
+      reset(init = false) {
+        this.x = Math.random() * width;
+        this.y = init ? Math.random() * height : height + 10;
+        this.size = Math.random() * 2.5 + 0.8;
+        // Rising anti-gravity velocity
+        this.speedY = -(Math.random() * 1.5 + 0.6);
+        // Horizontal drift oscillation
+        this.speedX = (Math.random() - 0.5) * 0.8;
+        this.opacity = Math.random() * 0.7 + 0.3;
+        this.fadeRate = Math.random() * 0.003 + 0.001;
+        this.hue = Math.floor(Math.random() * 25 + 20); // 20-45 (Deep Amber to Bright Gold)
+      }
+
+      update() {
+        this.y += this.speedY;
+        this.x += this.speedX + Math.sin(this.y * 0.01) * 0.3;
+        this.opacity -= this.fadeRate;
+
+        if (this.opacity <= 0 || this.y < -10) {
+          this.reset();
+        }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${this.hue}, 100%, 55%, ${this.opacity})`;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = `hsl(${this.hue}, 100%, 50%)`;
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    const particleCount = 75;
+    const particles = Array.from({ length: particleCount }, () => new EmberParticle());
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>
